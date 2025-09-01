@@ -356,7 +356,6 @@ services:
     container_name: supabase-analytics
     image: supabase/logflare:1.14.2
     restart: unless-stopped
-    network_mode: service:supabase-on-hstgr
     # Uncomment to use Big Query backend for analytics
     # volumes:
     #   - type: bind
@@ -404,7 +403,6 @@ services:
     container_name: supabase-db
     image: supabase/postgres:15.8.1.060
     restart: unless-stopped
-    network_mode: service:supabase-on-hstgr
     volumes:
       - ./volumes/db/realtime.sql:/docker-entrypoint-initdb.d/migrations/99-realtime.sql:Z
       # Must be superuser to create event trigger
