@@ -492,7 +492,6 @@ services:
     container_name: supabase-pooler
     image: supabase/supavisor:2.5.7
     restart: unless-stopped
-    network_mode: service:supabase-on-hstgr
     volumes:
       - ./volumes/pooler/pooler.exs:/etc/pooler/pooler.exs:ro,z
     healthcheck:
