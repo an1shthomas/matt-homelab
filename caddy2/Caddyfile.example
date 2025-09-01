@@ -12,3 +12,10 @@ s.mydomain.com {
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
     }
 }
+
+supabase.mydomain.com {
+    reverse_proxy supabase-on-hstgr:8000
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+}

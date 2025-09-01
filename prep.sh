@@ -148,6 +148,7 @@ cp caddy2/Caddyfile.example caddy2/Caddyfile
 cp searxng/example.env searxng/.env
 cp searxng/config/settings.yml.example searxng/config/settings.yml
 cp openwebui/example.env openwebui/.env
+cp supabase/example.env supabase/.env
 
 cd ~
 mv homelab /home/$username/homelab
