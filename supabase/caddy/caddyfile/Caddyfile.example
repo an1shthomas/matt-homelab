@@ -1,0 +1,21 @@
+# Main Supabase API - Kong Gateway handles all routing internally
+supabase.com {
+    reverse_proxy localhost:8000
+    
+    # Enable CORS for API requests
+    header {
+        Access-Control-Allow-Origin "*"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+        Access-Control-Allow-Headers "Content-Type, Authorization, apikey, x-client-info"
+        Access-Control-Max-Age "86400"
+    }
+    
+    # Handle preflight requests
+    @options method OPTIONS
+    respond @options 204
+    
+    # Increase upload limits for file storage
+    request_body {
+        max_size 100MB
+    }
+}
