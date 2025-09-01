@@ -14,3 +14,11 @@ services:
     - ${PWD}/data:/data
     - ${PWD}/config:/config
     - ${PWD}/caddyfile:/etc/caddy
+    networks:
+    - default
+    - supabase_default  # This connects to Supabase network
+
+# Define the external network (created by your Supabase setup)
+networks:
+  supabase_default:
+    external: true

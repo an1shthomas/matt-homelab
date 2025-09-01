@@ -1,6 +1,6 @@
 # Main Supabase API - Kong Gateway handles all routing internally
 supabase.com {
-    reverse_proxy localhost:8000
+    reverse_proxy supabase-kong:8000
     
     # Enable CORS for API requests
     header {
